@@ -1,7 +1,24 @@
 'use strict';
 
 app.homeView = kendo.observable({
-    onShow: function() {},
+    
+
+    
+    dataSource : new kendo.data.DataSource({
+          type: "odata",
+          transport: {
+            read: {
+              url: "http://demos.telerik.com/kendo-ui/service/Northwind.svc/Products"
+            }
+          },
+          serverPaging: true,
+        
+          pageSize: 20
+    }),
+    onShow: function() {
+        
+        
+    },
     afterShow: function() {}
 });
 
